@@ -1,4 +1,6 @@
-import React, {Profiler} from "react";
+import React from "react";
+import "./index.css"
+
 
 const productData = [
     {
@@ -63,9 +65,9 @@ function Header() {
     const isOpen = hour >= openHours && hour <= closeHours;
 
     return (
-        <header>
+        <header className="header">
             <h1>Electrokinetic Store</h1>
-            <nav>
+            <nav className="nav">
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#catalog">Catalog</a></li>
@@ -73,7 +75,7 @@ function Header() {
                     <li><a href="#contacts">Contacts</a></li>
                 </ul>
             </nav>
-            <div>
+            <div className="working-hours">
                 {isOpen ? (
                     <p>We are currently open. Working hours: {openHours}:00-{closeHours}:00</p>
                 ) : (
@@ -86,8 +88,8 @@ function Header() {
 }
 
 function Catalog() {
-    return <main>
-        <ul>
+    return <main className="catalog">
+        <ul className="products">
             <Product/>
         </ul>
     </main>;
@@ -96,7 +98,7 @@ function Catalog() {
 function Product() {
     const products = [...productData];
     return (
-        <li>
+        <li className="product">
 
             <img src={products[1].photoName} alt={products[1].name}/>
             <div>
@@ -110,7 +112,7 @@ function Product() {
 }
 
 function Footer() {
-    return <footer>Footer</footer>
+    return <footer className="footer">Footer</footer>
 }
 
 export default App;
