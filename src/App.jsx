@@ -72,7 +72,7 @@ function Catalog() {
 }
 
 function Product() {
-    return <li>Product</li>
+    return 
 }
 
 function Footer() {
