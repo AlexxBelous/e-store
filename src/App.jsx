@@ -56,9 +56,31 @@ function App() {
 }
 
 function Header() {
+    // const hour = new Date().getHours();
+    const hour = 7;
+    const openHours = 9;
+    const closeHours = 21;
+    const isOpen = hour >= openHours && hour <= closeHours;
+
     return (
         <header>
             <h1>Electrokinetic Store</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#catalog">Catalog</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                </ul>
+            </nav>
+            <div>
+                {isOpen ? (
+                    <p>We are currently open. Working hours: {openHours}:00-{closeHours}:00</p>
+                ) : (
+                    <p>We are close. Working hours: {openHours}:00-{closeHours}:00</p>
+                )}
+
+            </div>
         </header>
     );
 }
